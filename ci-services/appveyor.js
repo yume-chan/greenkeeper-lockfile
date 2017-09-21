@@ -21,6 +21,6 @@ module.exports = {
   repoSlug: env.APPVEYOR_REPO_NAME,
   branchName: env.APPVEYOR_REPO_BRANCH,
   firstPush: getNumberOfCommitsOnBranch(env.APPVEYOR_REPO_BRANCH) === 1,
-  correctBuild: env.APPVEYOR_PULL_REQUEST_NUMBER === '',
+  correctBuild: env.APPVEYOR_PULL_REQUEST_NUMBER === undefined,
   uploadBuild: env.APPVEYOR_JOB_NUMBER === '1'
 }
