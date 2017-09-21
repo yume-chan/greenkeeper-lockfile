@@ -2,6 +2,8 @@ const gitHelpers = require('../lib/git-helpers')
 
 const env = process.env
 
+console.log(JSON.stringify(env));
+
 module.exports = {
   repoSlug: env.APPVEYOR_REPO_NAME,
   branchName: env.APPVEYOR_REPO_BRANCH,
