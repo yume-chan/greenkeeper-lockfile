@@ -11,7 +11,7 @@ function getNumberOfCommitsOnBranch(branch) {
   const notArgument = `$(git for-each-ref '--format=%(refname)' refs/ | grep -v /${branch})`
   const gitCommand = `git log ${refArgument} --oneline --not ${notArgument} | wc -l`
   const result = exec(
-    `C:/cygwin/bin/bash -lc "${gitCommand}"`
+    `C:/cygwin/bin/bash -lc "cd $APPVEYOR_BUILD_FOLDER && ${gitCommand}"`
   ).toString()
   console.log(result);
   return _.toNumber(result)
